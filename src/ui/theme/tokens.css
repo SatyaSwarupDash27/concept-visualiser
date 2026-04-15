@@ -1,0 +1,40 @@
+/* ui/theme/tokens.css */
+/* Design system tokens and visual state mappings */
+
+:root {
+  /* Surface colors */
+  --bg-primary: #0f172a;
+  --bg-secondary: #1e293b;
+  --bg-tertiary: #334155;
+  
+  /* Text colors */
+  --text-primary: #f8fafc;
+  --text-secondary: #94a3b8;
+  --text-muted: #64748b;
+
+  /* Accent colors */
+  --accent-primary: #3b82f6;
+  --accent-secondary: #8b5cf6;
+
+  /* Element States Mapping */
+  --el-default: #475569;
+  --el-comparing: #f59e0b;
+  --el-swapping: #ef4444;
+  --el-sorted: #10b981;
+  --el-pivot: #8b5cf6;
+  --el-current: #3b82f6;
+  --el-visited: #6366f1;
+  --el-path: #06b6d4;
+  --el-inStack: #f97316;
+  --el-inQueue: #ec4899;
+  --el-highlighted: #fde047;
+  --el-deadlocked: #dc2626;
+  --el-waiting: #fbbf24;
+  --el-running: #22c55e;
+  --el-done: #94a3b8;
+  --el-evicted: #f43f5e;
+  --el-hit: #10b981;
+  --el-fault: #ef4444;
+  --el-safe: #22c55e;
+  --el-unsafe: #dc2626;
+}
