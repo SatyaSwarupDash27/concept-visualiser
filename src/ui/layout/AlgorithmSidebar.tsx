@@ -15,8 +15,8 @@ export const AlgorithmSidebar: React.FC<{ domain: 'dsa' | 'os' }> = ({ domain })
   return (
     <div className="w-72 bg-slate-900/80 backdrop-blur-xl border-r border-slate-800 h-full flex flex-col">
       <div className="p-6 border-b border-slate-800">
-        <h1 className="text-2xl font-black text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-500 tracking-tight">
-          CS Visualizer
+        <h1 className="text-xl font-black text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-500 tracking-tight uppercase leading-tight">
+          Concept <br/> Visualiser
         </h1>
         <div className="flex gap-2 mt-4 p-1 bg-slate-950 rounded-lg">
           <NavLink to="/dsa" className={({isActive}) => `flex-1 text-center py-1.5 rounded-md text-sm font-bold transition-all ${isActive ? 'bg-slate-800 text-white shadow-sm' : 'text-slate-500 hover:text-slate-300'}`}>DSA</NavLink>
