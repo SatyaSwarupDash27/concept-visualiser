@@ -1,5 +1,6 @@
 // algorithms/dsa/dp/lcs.gen.ts
 import type { MatrixSnapshot } from '../../../core/types/snapshot.dsa';
+import type { ElementState } from '../../../core/types/highlights.types';
 import { createMetrics, cloneMetrics } from '../../../core/types/snapshot.base';
 
 export function* lcsGenerator(input: { s1: string, s2: string }): Generator<MatrixSnapshot> {
@@ -9,8 +10,8 @@ export function* lcsGenerator(input: { s1: string, s2: string }): Generator<Matr
   const metrics = createMetrics({ lcsLength: 0, comparisons: 0 });
   const dp: number[][] = Array.from({ length: n + 1 }, () => Array(m + 1).fill(0));
 
-  const colHeaders = ['', ...s2.split('')];
-  const rowHeaders = ['', ...s1.split('')];
+  const colLabels = ['', ...s2.split('')];
+  const rowLabels = ['', ...s1.split('')];
 
   yield {
     structure: dp.map(row => [...row]),
@@ -18,8 +19,8 @@ export function* lcsGenerator(input: { s1: string, s2: string }): Generator<Matr
     metrics: cloneMetrics(metrics),
     message: `Starting LCS for "${s1}" and "${s2}"`,
     phase: 'init',
-    colHeaders,
-    rowHeaders
+    rowLabels,
+    colLabels
   };
 
   for (let i = 1; i <= n; i++) {
@@ -31,12 +32,12 @@ export function* lcsGenerator(input: { s1: string, s2: string }): Generator<Matr
         hl[`${i-1},${j-1}`] = 'highlighted';
         yield {
           structure: dp.map(row => [...row]),
-          highlights: { cells: hl },
+          highlights: { cells: hl as Record<string, ElementState> },
           metrics: cloneMetrics(metrics),
           message: `Match! "${s1[i-1]}" == "${s2[j-1]}". Adding 1 to diagonal.`,
           phase: 'match',
-          colHeaders,
-          rowHeaders
+          colLabels,
+          rowLabels
         };
         dp[i][j] = dp[i - 1][j - 1] + 1;
       } else {
@@ -44,12 +45,12 @@ export function* lcsGenerator(input: { s1: string, s2: string }): Generator<Matr
         hl[`${i},${j-1}`] = 'highlighted';
         yield {
           structure: dp.map(row => [...row]),
-          highlights: { cells: hl },
+          highlights: { cells: hl as Record<string, ElementState> },
           metrics: cloneMetrics(metrics),
           message: `Mismatch. Taking max of neighbors: max(${dp[i-1][j]}, ${dp[i][j-1]})`,
           phase: 'mismatch',
-          colHeaders,
-          rowHeaders
+          colLabels,
+          rowLabels
         };
         dp[i][j] = Math.max(dp[i - 1][j], dp[i][j - 1]);
       }
@@ -60,8 +61,8 @@ export function* lcsGenerator(input: { s1: string, s2: string }): Generator<Matr
         metrics: cloneMetrics(metrics),
         message: `Cell [${i},${j}] updated to ${dp[i][j]}`,
         phase: 'updated',
-        colHeaders,
-        rowHeaders
+        rowLabels,
+        colLabels
       };
     }
   }
@@ -71,7 +72,7 @@ export function* lcsGenerator(input: { s1: string, s2: string }): Generator<Matr
   // Backtracking for string
   let res = "";
   let i = n, j = m;
-  const finalHl: Record<string, string> = {};
+  const finalHl: Record<string, any> = {};
   while (i > 0 && j > 0) {
      if (s1[i-1] === s2[j-1]) {
         res = s1[i-1] + res;
@@ -90,7 +91,7 @@ export function* lcsGenerator(input: { s1: string, s2: string }): Generator<Matr
     metrics: cloneMetrics(metrics),
     message: `LCS complete! Max Length: ${metrics.lcsLength}. Sequence: "${res}"`,
     phase: 'complete',
-    colHeaders,
-    rowHeaders
+    rowLabels,
+    colLabels
   };
 }

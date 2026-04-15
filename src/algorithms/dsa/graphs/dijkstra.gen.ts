@@ -42,7 +42,7 @@ export function* dijkstraGenerator(input: GraphStructure): Generator<GraphSnapsh
 
     const uId = currentId as string;
     hlNodes[uId] = 'current';
-    metrics.nodesVisited++;
+    metrics.nodesVisited!++;
 
     yield {
       structure: input,
@@ -76,7 +76,7 @@ export function* dijkstraGenerator(input: GraphStructure): Generator<GraphSnapsh
       if (newDist < distances[vId]) {
         distances[vId] = newDist;
         nodeLabels[vId] = `dist: ${newDist}`;
-        metrics.relaxations++;
+        metrics.relaxations!++;
         hlNodes[vId] = 'sorted';
 
         yield {

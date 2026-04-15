@@ -19,7 +19,7 @@ export function* heapGenerator(input: number[]): Generator<TreeSnapshot> {
     let curr = heap.length - 1;
 
     yield {
-      structure: arrayToTree(heap),
+      structure: arrayToTree(heap) as TreeNode,
       highlights: { nodes: { [`node-${curr}`]: 'highlighted' }, edges: {} },
       metrics: cloneMetrics(metrics),
       message: `Inserting ${value} at the last position`,
@@ -32,7 +32,7 @@ export function* heapGenerator(input: number[]): Generator<TreeSnapshot> {
       metrics.comparisons++;
 
       yield {
-        structure: arrayToTree(heap),
+        structure: arrayToTree(heap) as TreeNode,
         highlights: { nodes: { [`node-${curr}`]: 'comparing', [`node-${parent}`]: 'comparing' }, edges: {} },
         metrics: cloneMetrics(metrics),
         message: `Comparing ${heap[curr]} with parent ${heap[parent]}`,
@@ -44,7 +44,7 @@ export function* heapGenerator(input: number[]): Generator<TreeSnapshot> {
         metrics.swaps++;
 
         yield {
-          structure: arrayToTree(heap),
+          structure: arrayToTree(heap) as TreeNode,
           highlights: { nodes: { [`node-${curr}`]: 'swapping', [`node-${parent}`]: 'swapping' }, edges: {} },
           metrics: cloneMetrics(metrics),
           message: `Swapped ${heap[parent]} and ${heap[curr]} to restore heap property`,
@@ -58,8 +58,11 @@ export function* heapGenerator(input: number[]): Generator<TreeSnapshot> {
   }
 
   yield {
-    structure: arrayToTree(heap),
-    highlights: { nodes: Object.fromEntries(heap.map((_, i) => [`node-${i}`, 'sorted'])) },
+    structure: arrayToTree(heap) as TreeNode,
+    highlights: { 
+      nodes: Object.fromEntries(heap.map((_, i) => [`node-${i}`, 'sorted'])),
+      edges: {} 
+    },
     metrics: cloneMetrics(metrics),
     message: 'Max-Heap construction complete!',
     phase: 'complete',

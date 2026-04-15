@@ -1,5 +1,4 @@
 // algorithms/os/sync/diningPhilosophers.gen.ts
-import type { SynchronizationSnapshot, Thread } from '../../../core/types/snapshot.os';
 import { createMetrics, cloneMetrics } from '../../../core/types/snapshot.base';
 
 interface Phil {
@@ -40,7 +39,7 @@ export function* diningPhilosophersGenerator(input: { count: number, simulateDea
       } as any;
     }
 
-    metrics.deadlocksDetected++;
+    metrics.deadlocksDetected!++;
     for (let i = 0; i < count; i++) phils[i].state = 'deadlocked';
 
     yield {

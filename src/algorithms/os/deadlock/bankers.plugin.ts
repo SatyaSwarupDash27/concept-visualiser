@@ -32,5 +32,5 @@ registry.register({
       avail: [3, 3, 2]
     }
   },
-  stepHint: (input: any) => 30
+  stepHint: (_input: any) => 30
 });

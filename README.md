@@ -1,6 +1,6 @@
 # Concept Visualiser
 
-[![Live Demo](https://img.shields.io/badge/Live-Demo-blue?style=for-the-badge&logo=vercel)](https://concept-visualiser.vercel.app)
+[![Live Demo](https://img.shields.io/badge/Live-Demo-blue?style=for-the-badge&logo=vercel)](https://concept-visualiser-git-main-satyaswarupdash27s-projects.vercel.app/)
 
 Concept Visualiser is a high-performance, deterministic simulation engine designed for exploring the step-by-step logic of Data Structures, Algorithms, and Operating Systems concepts. Built with a focus on educational clarity and architectural precision, it allows students and developers to visualize abstract computing mechanics in real-time.
 
@@ -52,8 +52,8 @@ To set up the development environment locally, follow these steps:
 
 1. **Clone the Repository**:
    ```bash
-   git clone <repository-url>
-   cd cs-visualiser
+   git clone https://github.com/SatyaSwarupDash27/concept-visualiser.git
+   cd concept-visualiser
    ```
 
 2. **Install Dependencies**:

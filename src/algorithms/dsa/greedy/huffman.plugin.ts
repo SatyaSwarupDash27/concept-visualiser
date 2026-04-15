@@ -16,5 +16,5 @@ registry.register({
     defaultSize: 10,
     options: { text: 'BEEP BOOP BEEP' }
   },
-  stepHint: (input: any) => 30
+  stepHint: (_input: any) => 30
 });

@@ -162,7 +162,7 @@ export const LandingPage: React.FC = () => {
                </div>
                <p className="text-slate-500 max-w-xs text-sm leading-relaxed font-medium">Master the architecture of logic. Open platform for computer science education.</p>
                <div className="flex gap-4">
-                  <a href="#" className="p-2.5 rounded-lg bg-slate-900 border border-slate-800 text-slate-400 hover:text-white transition-colors">
+                  <a href="https://github.com/SatyaSwarupDash27/concept-visualiser" target="_blank" rel="noopener noreferrer" className="p-2.5 rounded-lg bg-slate-900 border border-slate-800 text-slate-400 hover:text-white transition-colors">
                      <Github className="w-5 h-5" />
                   </a>
                </div>

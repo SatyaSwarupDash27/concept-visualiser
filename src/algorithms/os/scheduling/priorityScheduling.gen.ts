@@ -33,7 +33,7 @@ export function* priorityGenerator(input: { processes: Process[] }): Generator<S
 
     if (highestPriority) {
       if (currentProcess && currentProcess.id !== highestPriority.id) {
-        metrics.contextSwitches++;
+        metrics.contextSwitches!++;
       }
 
       if (!currentProcess || currentProcess.id !== highestPriority.id) {

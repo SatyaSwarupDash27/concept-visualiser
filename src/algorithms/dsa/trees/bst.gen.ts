@@ -40,7 +40,6 @@ export function* bstGenerator(input: number[]): Generator<TreeSnapshot> {
 
 function* insertNode(root: TreeNode, value: number, metrics: any): Generator<TreeSnapshot> {
   let curr = root;
-  const parentPath: string[] = [];
 
   while (true) {
     metrics.comparisons++;

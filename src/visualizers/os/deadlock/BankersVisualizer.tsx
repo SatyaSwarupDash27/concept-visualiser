@@ -6,7 +6,7 @@ const BankersVisualizer: React.FC<{ snapshot: any }> = ({ snapshot }) => {
   const currentP = snapshot.currentProcess;
   const safeSequence = snapshot.safeSequence || [];
 
-  const MatrixGrid = ({ data, title, hlRow, hlCol }: any) => (
+  const MatrixGrid = ({ data, title, hlRow }: any) => (
     <div className="flex flex-col space-y-2">
       <h5 className="text-[9px] font-black uppercase tracking-widest text-slate-500 text-center">{title}</h5>
       <div className="bg-slate-900/50 border border-slate-700/50 rounded-xl p-2 overflow-hidden">

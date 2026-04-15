@@ -3,7 +3,7 @@ import type { GraphSnapshot, GraphStructure } from '../../../core/types/snapshot
 import { createMetrics, cloneMetrics } from '../../../core/types/snapshot.base';
 
 export function* dfsGenerator(input: GraphStructure): Generator<GraphSnapshot> {
-  const { nodes, edges } = input;
+  const { nodes, edges: _edges } = input;
   const metrics = createMetrics({ nodesVisited: 0 });
   const visited = new Set<string>();
   const hlNodes: Record<string, any> = {};

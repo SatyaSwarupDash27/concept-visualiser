@@ -30,7 +30,7 @@ export function* srtfGenerator(input: { processes: Process[] }): Generator<Sched
     if (shortest) {
       // Context switch check
       if (currentProcess && currentProcess.id !== shortest.id) {
-        metrics.contextSwitches++;
+        metrics.contextSwitches!++;
       }
 
       if (!currentProcess || currentProcess.id !== shortest.id) {

@@ -44,7 +44,7 @@ export function* bankersGenerator(input: { alloc: number[][], max: number[][], a
           for (let j = 0; j < m; j++) work[j] += alloc[i][j];
           finished[i] = true;
           safeSequence.push(`P${i}`);
-          metrics.processesFinished++;
+          metrics.processesFinished!++;
           found = true;
 
           yield {

@@ -17,5 +17,5 @@ registry.register({
     max: 8,
     defaultSize: 5
   },
-  stepHint: (input: any) => 50
+  stepHint: (_input: any) => 50
 });

@@ -3,7 +3,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 
 const DiskVisualizer: React.FC<{ snapshot: any }> = ({ snapshot }) => {
-  const { currentPos, queue, visited } = snapshot.structure;
+  const { currentPos, queue } = snapshot.structure;
   const seekSequence = snapshot.seekSequence || [];
   
   const tracks = 200;

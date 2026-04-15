@@ -1,5 +1,5 @@
 // algorithms/os/sync/producerConsumer.plugin.ts
-import { lazy, createElement } from 'react';
+import { lazy } from 'react';
 import { registry } from '../../../core/registry/algorithmRegistry';
 import { producerConsumerGenerator } from './producerConsumer.gen';
 import { producerConsumerMeta } from './producerConsumer.meta';
@@ -10,10 +10,7 @@ registry.register({
   id: 'producerConsumer',
   meta: producerConsumerMeta,
   generator: producerConsumerGenerator as any,
-  visualizer: (props: any) => {
-    // We wrap are use a specific visualizer if needed, but for now SyncVisualizer is fine
-     return createElement(Visualizer, { ...props });
-  },
+  visualizer: Visualizer as any,
   inputConfig: {
     type: 'custom', 
     defaultSize: 5, // buffer size
