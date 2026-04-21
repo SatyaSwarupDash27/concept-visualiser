@@ -1,6 +1,11 @@
 # Concept Visualiser
 
-[![Live Demo](https://img.shields.io/badge/Live-Demo-blue?style=for-the-badge&logo=vercel)](https://concept-visualiser-git-main-satyaswarupdash27s-projects.vercel.app/)
+## 🚀 Live Demo
+
+You can view the live application here: 
+**[Live Demo on Vercel](https://concept-visualiser-git-main-satyaswarupdash27s-projects.vercel.app/)**
+
+---
 
 Concept Visualiser is a high-performance, deterministic simulation engine designed for exploring the step-by-step logic of Data Structures, Algorithms, and Operating Systems concepts. Built with a focus on educational clarity and architectural precision, it allows students and developers to visualize abstract computing mechanics in real-time.
 
@@ -79,9 +84,9 @@ The application is optimized for deployment on **Vercel**:
    - **Output Directory**: `dist`
 4. Deploy.
 
+---
+
 ## License
 
 This project is licensed under the **GNU General Public License v3.0**. See the [LICENSE](LICENSE) file for the full terms of the license.
 
----
-*Built with high fidelity for the next generation of computer scientists.*
